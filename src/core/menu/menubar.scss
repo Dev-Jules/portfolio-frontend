@@ -1,0 +1,17 @@
+.menubar {
+  background: #333;
+  color: white;
+  padding: 1rem;
+  overflow: hidden; // Prevent overflow issues
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: #ddd;
+  }
+}
