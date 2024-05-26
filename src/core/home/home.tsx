@@ -1,5 +1,5 @@
 import { Link as ScrollLink } from 'react-scroll';
-import {Box, Button, Text, VStack, Image} from '@chakra-ui/react';
+import {Box, Button, Text, VStack} from '@chakra-ui/react';
 import { motion } from "framer-motion";
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import React from "react";
