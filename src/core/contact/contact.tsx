@@ -20,7 +20,6 @@ const Contact = () => {
             className="home"
             height="100vh"
             width="100vw"
-            bgImage="url('src/assets/contact.png')"
             bgSize="cover"
             bgPosition="center"
             display="flex"
@@ -40,7 +39,7 @@ const Contact = () => {
                 variants={variants}
                 transition={{ duration: 1 }}
             >
-                <Heading>Contact</Heading>
+                <Heading fontFamily="Orbitron">Contact</Heading>
             </MotionBox>
         </Box>
     );

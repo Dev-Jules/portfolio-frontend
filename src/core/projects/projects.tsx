@@ -20,9 +20,7 @@ const Projects = () => {
             className="home"
             height="100vh"
             width="100vw"
-            bgImage="url('src/assets/projects.png')"
-            bgSize="cover"
-            bgPosition="center"
+            pr="50vw"
             display="flex"
             flexDirection="column"
             alignItems="center"
@@ -30,17 +28,18 @@ const Projects = () => {
             color="white"
             position="relative"
             ref={ref}
+            bg="transparent"
         >
             <MotionBox
                 className="heading"
                 position="absolute"
-                top="52vh"  // adjust as needed
+                top="52vh"
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={variants}
                 transition={{ duration: 1 }}
             >
-                <Heading>PROJECTS</Heading>
+                <Heading fontFamily="Orbitron">PROJECTS</Heading>
             </MotionBox>
         </Box>
     );

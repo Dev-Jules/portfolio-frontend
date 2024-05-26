@@ -12,7 +12,6 @@ function App() {
     return (
         <Router>
             <Menubar />
-
             <Box>
                 <Element name="home" id="home" className="section">
                     <Home />

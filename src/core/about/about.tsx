@@ -20,9 +20,7 @@ const About = () => {
             className="home"
             height="100vh"
             width="100vw"
-            bgImage="url('src/assets/about.png')"
-            bgSize="cover"
-            bgPosition="center"
+            bg="transparent"
             display="flex"
             flexDirection="column"
             alignItems="center"
@@ -41,7 +39,7 @@ const About = () => {
                 variants={variants}
                 transition={{ duration: 1 }}
             >
-                <Heading>ABOUT</Heading>
+                <Heading fontFamily="Orbitron">ABOUT</Heading>
             </MotionBox>
         </Box>
     );

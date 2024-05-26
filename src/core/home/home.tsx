@@ -1,57 +1,92 @@
-
 import { Link as ScrollLink } from 'react-scroll';
-import { Box, Button, Text, VStack } from '@chakra-ui/react';
+import {Box, Button, Text, VStack, Image} from '@chakra-ui/react';
+import { motion } from "framer-motion";
+import { ChevronDownIcon } from '@chakra-ui/icons';
+import React from "react";
 import './home.scss';
-import {motion} from "framer-motion";
+
 
 const MotionBox = motion(Box);
 
+
+type ScrollTextProps = {
+    to: string;
+    arrow: React.ReactNode;
+    projectText: React.ReactNode;
+    //...other props.
+};
+
+const ScrollText = ({ to, arrow, projectText, ...rest }: ScrollTextProps) => (
+    <VStack
+        as={ScrollLink}
+        to={to}
+        smooth={true}
+        color="darkgrey"
+        duration={500}
+        _hover={{ cursor: "pointer", color: "black" }}
+        align="center"  // vertically align the content (Arrow and Text)
+        {...rest}
+    >
+        <Text >{projectText}</Text>
+        {arrow}
+    </VStack>
+);
+
+
 const Home = () => {
     return (
-        <MotionBox
-            className="home"
-            height="100vh"
-            width="100vw"
-            bgImage="url('src/assets/cover.png')"
-            bgSize="cover"
-            bgPosition="center"
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            color="white"
-            position="relative"
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            transition={{ duration: 1 }}
-        >
-                <VStack spacing={4} className="hero-content" maxW="800px" textAlign="center">
-                    <Text fontSize="3xl" fontWeight="bold">Hi, I'm Dev Ju</Text>
-                    <Text fontSize="xl">Fullstack Developer specializing in Angular / React and .NET</Text>
-                    <Text fontSize="xl">Future IT-Security specialist</Text>
-                    <Box className="cta-buttons" mt={4} display="flex" gap={4}>
-                        <Button as={ScrollLink} to="about" smooth={true} duration={500} colorScheme='blackAlpha' >
-                            View About
-                        </Button>
-                        <Button as={ScrollLink} to="contact" smooth={true} duration={500} colorScheme="gray">
-                            Contact Me
-                        </Button>
+        <Box className="home" width="100%" position="relative">
+            <MotionBox
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                display="flex"
+                pr="50vw"
+                alignItems="center"
+                justifyContent="center"
+                width="100%"
+                height="100%"
+            >
+                <VStack spacing={4} className="hero-content" maxW="800px" alignItems="center">
+                    <Text fontFamily="Orbitron" fontSize="3xl" fontWeight="bold" color="white">Hi, I'm Dev Ju</Text>
+                    <Text fontSize="xl" color="lightgray">Fullstack Developer specializing in Angular / React and .NET</Text>
+                    <Text fontSize="xl" color="white">Future IT-Security specialist</Text>
+                    <Box>
+                        <ScrollLink
+                            to="about"
+                            smooth={true}
+                            duration={500}
+                        >
+                            <Button colorScheme="blackAlpha" marginRight={4}>
+                                View About
+                            </Button>
+                        </ScrollLink>
+                        <ScrollLink
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                        >
+                            <Button colorScheme="gray">
+                                Contact Me
+                            </Button>
+                        </ScrollLink>
                     </Box>
                 </VStack>
-                <Box className="scroll-down" position="absolute" bottom="20px">
-                    <Button
-                        as={ScrollLink}
-                        to="projects"
-                        smooth={true}
-                        duration={500}
-                        variant="link"
-                        size="lg"
-                        className="scroll-link custom-button"
-                    >
-                        Projects
-                    </Button>
-                </Box>
-        </MotionBox>
+            </MotionBox>
+            <MotionBox
+                position="absolute"
+                bottom="0"
+                width="100%"
+                display="flex"
+                justifyContent="center"
+                pb="3vh"
+                initial={{ y: 0 }}
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+            >
+                <ScrollText to="projects" projectText="Projects" arrow={<ChevronDownIcon boxSize="5" />} />
+            </MotionBox>
+        </Box>
     );
 };
 
