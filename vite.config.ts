@@ -9,4 +9,5 @@ export default defineConfig({
       input: 'index.html',
     },
   },
+  base: '/',  // Ensure this base path is correct for Vercel
 });
