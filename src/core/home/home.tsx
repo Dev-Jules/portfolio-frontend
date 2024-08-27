@@ -35,12 +35,12 @@ const Home = () => {
                         Currently working at <a href={"https://www.polygons.at"}>Polygons</a>
                     </Text>
                     <Box>
-                        <ScrollLink to="about" smooth={true} duration={500}>
+                        <ScrollLink to={"about"} smooth={true} duration={500}>
                             <Button colorScheme="blackAlpha" marginRight={4}>
                                 View About
                             </Button>
                         </ScrollLink>
-                        <ScrollLink to="contact" smooth={true} duration={500}>
+                        <ScrollLink to={"contact"} smooth={true} duration={500}>
                             <Button colorScheme="gray">Contact Me</Button>
                         </ScrollLink>
                     </Box>
