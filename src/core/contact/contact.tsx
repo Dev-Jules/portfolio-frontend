@@ -2,6 +2,7 @@ import { Box, Heading } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './contact.scss';
+import {propertyIsEnumerable} from "@typescript-eslint/eslint-plugin";
 
 const MotionBox = motion(Box);
 
@@ -39,7 +40,7 @@ const Contact = () => {
                 variants={variants}
                 transition={{ duration: 1 }}
             >
-                <Heading fontFamily="Orbitron">Contact</Heading>
+                <Heading fontFamily="Lato">Contact</Heading>
             </MotionBox>
         </Box>
     );

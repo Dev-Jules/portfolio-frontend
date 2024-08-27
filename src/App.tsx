@@ -1,33 +1,37 @@
-import { BrowserRouter as Router} from 'react-router-dom';
-import { Element } from 'react-scroll';
-import { Box } from '@chakra-ui/react';
+import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {Element} from 'react-scroll';
+import {Box} from '@chakra-ui/react';
 import './App.scss';
-import Home from "./core/home/home";
-import Projects from "./core/projects/projects";
-import About from "./core/about/about";
-import Contact from "./core/contact/contact";
-import Menubar from "./core/menu/menubar";
+import Home from './core/home/home';
+import Projects from './core/projects/projects';
+import About from './core/about/about';
+import Contact from './core/contact/contact';
+import ScrollUpButton from "./components/specialButtons/scrollUpButton.tsx";
 
-function App() {
+const App: React.FC = () => {
     return (
         <Router>
-            <Menubar />
             <Box>
                 <Element name="home" id="home" className="section">
-                    <Home />
+                    <Home/>
                 </Element>
+
                 <Element name="projects" id="projects" className="section">
-                    <Projects />
+                    <Projects/>
                 </Element>
+
                 <Element name="about" id="about" className="section">
-                    <About />
+                    <About/>
                 </Element>
+
                 <Element name="contact" id="contact" className="section">
-                    <Contact />
+                    <Contact/>
                 </Element>
+                <ScrollUpButton />
             </Box>
         </Router>
     );
-}
+};
 
 export default App;

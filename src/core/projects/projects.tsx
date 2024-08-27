@@ -39,7 +39,8 @@ const Projects = () => {
                 variants={variants}
                 transition={{ duration: 1 }}
             >
-                <Heading fontFamily="Orbitron">PROJECTS</Heading>
+                <Heading fontFamily="Lato">PROJECTS</Heading>
+
             </MotionBox>
         </Box>
     );

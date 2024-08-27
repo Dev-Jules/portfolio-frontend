@@ -1,28 +1,33 @@
-import { Link } from 'react-scroll';
-import { Box } from '@chakra-ui/react';
+import React from 'react';
+import {Link} from 'react-scroll';
+import {Flex, Box, Button} from '@chakra-ui/react';
 import './menubar.scss';
-import { routes } from '../../routes';
+import {routes} from '../../routes';
 
-const Menubar = () => {
+const Menubar: React.FC = () => {
     const renderMenuItems = () => (
-        Object.keys(routes).map((key) =>(
+        Object.keys(routes).map((key) => (
             <Link
                 activeClass="active"
                 to={key}
                 spy={true}
                 smooth={true}
                 duration={500}
-                key={key}>
-                {key[0].toUpperCase() + key.substring(1)}
+                key={key}
+                style={{fontFamily: "Lato, sans-serif", margin: "0 10px"}}
+            >
+                <Button variant="ghost" _hover={{color: 'teal.500'}}>
+                    {key.toUpperCase()}
+                </Button>
             </Link>
         ))
     );
 
     return (
-        <Box as="nav" className="menubar" position="fixed" top="0" width="100%" bg="black" color="white" zIndex="10">
-            <Box display="flex" justifyContent="space-around">
+        <Box as="nav" className="menubar">
+            <Flex justify="space-around" align="center" p="4">
                 {renderMenuItems()}
-            </Box>
+            </Flex>
         </Box>
     );
 };

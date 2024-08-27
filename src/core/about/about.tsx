@@ -39,7 +39,7 @@ const About = () => {
                 variants={variants}
                 transition={{ duration: 1 }}
             >
-                <Heading fontFamily="Orbitron">ABOUT</Heading>
+                <Heading fontFamily="Lato">ABOUT</Heading>
             </MotionBox>
         </Box>
     );
